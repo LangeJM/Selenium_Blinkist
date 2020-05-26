@@ -1,7 +1,7 @@
 # Blinkist Book Scraper
 ### Python Script to fetch book summaries from [blinkist.com](https://www.blinkist.com/) with pdf output 
 
-####Steps:
+#### Steps:
 1. Start Selenium Firefox session, navigate and log in to blinkist.com (needs manual reCaptcha resolution)
 2. Either read out books in personal library or get list of all books
 3. Compare against files in directory and skip any file that has already been acquired. 
