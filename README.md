@@ -12,5 +12,5 @@
 #### Requirements:
 - Premium subscription with blinkist.com
 - A number of libraries that can be found [here](https://github.com/LangeJM/Selenium_Blinkist/blob/master/requirements.txt)
-- Selenium webdriver Geckodriver
+- Selenium webdriver [Geckodriver](https://github.com/LangeJM/Selenium_Blinkist/blob/master/geckodriver.exe)
 - Probably only works on Windows machines
