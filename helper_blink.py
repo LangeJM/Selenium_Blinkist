@@ -32,7 +32,7 @@ def set_geckodriver_path():
         geckodriver_path = 'geckodriver.exe'
     return geckodriver_path
 
-def setup_geckodriver(): #normally with argument 'chrome_webdriver_path' but seems webdriver doesn't run in mopdule-function so transferred to main.py
+def setup_geckodriver(): 
     '''Setup of Chrome webdriver'''
     firefox_profile = webdriver.FirefoxProfile()
     firefox_profile.set_preference("browser.privatebrowsing.autostart", True)
