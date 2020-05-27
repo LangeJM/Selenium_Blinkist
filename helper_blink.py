@@ -42,9 +42,11 @@ def blinkist_login(driver):
     '''Blinkist Login, with manual reCaptcha resolution'''
     driver.get('https://www.blinkist.com/en/nc/login')
     time.sleep(random.uniform(0, 1.5))
-    driver.find_element_by_id('login-form_login_email').send_keys('lange.julian@yahoo.com')
+    # Next version will include command-line arguments to insert username
+    driver.find_element_by_id('login-form_login_email').send_keys('your_username')
     time.sleep(random.uniform(0, 0.5))
-    driver.find_element_by_id('login-form_login_password').send_keys('trivial_10')
+    # Next version will include command-line arguments to insert password
+    driver.find_element_by_id('login-form_login_password').send_keys('your_password')
     time.sleep(random.uniform(0, 0.5))
     driver.find_element_by_id('login-form_login_password').send_keys(Keys.TAB + Keys.TAB + \
         Keys.TAB + Keys.TAB + Keys.TAB + Keys.TAB + Keys.SPACE)
