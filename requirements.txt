@@ -1,4 +1,6 @@
-﻿os
+﻿# Libraries needed to run main_blink.py
+
+os
 time
 msvcrt
 tkinter

@@ -4,6 +4,7 @@ of service blinkist.com
 import os
 import time
 import msvcrt
+import argparse
 import tkinter as tk
 from tkinter import filedialog
 import random
@@ -32,25 +33,42 @@ def set_geckodriver_path():
         geckodriver_path = 'geckodriver.exe'
     return geckodriver_path
 
-def setup_geckodriver(): 
+def setup_geckodriver(): #normally with argument 'chrome_webdriver_path' but seems webdriver doesn't run in mopdule-function so transferred to main.py
     '''Setup of Chrome webdriver'''
     firefox_profile = webdriver.FirefoxProfile()
     firefox_profile.set_preference("browser.privatebrowsing.autostart", True)
     return firefox_profile
 
+def get_blink_login():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("usr", nargs= '?', default='', help="Provide your Blinkist username for automated login", type=str)
+    parser.add_argument("pwd", nargs= '?', default='', help="Provide your Blinkist password for automated login", type=str)
+    args = parser.parse_args()
+    blink_pwd = args.pwd
+    blink_usr = args.usr
+        
+    return blink_usr, blink_pwd
+
 def blinkist_login(driver):
     '''Blinkist Login, with manual reCaptcha resolution'''
+    blink_usr, blink_pwd = get_blink_login()
     driver.get('https://www.blinkist.com/en/nc/login')
-    time.sleep(random.uniform(0, 1.5))
-    # Next version will include command-line arguments to insert username
-    driver.find_element_by_id('login-form_login_email').send_keys('your_username')
-    time.sleep(random.uniform(0, 0.5))
-    # Next version will include command-line arguments to insert password
-    driver.find_element_by_id('login-form_login_password').send_keys('your_password')
-    time.sleep(random.uniform(0, 0.5))
-    driver.find_element_by_id('login-form_login_password').send_keys(Keys.TAB + Keys.TAB + \
-        Keys.TAB + Keys.TAB + Keys.TAB + Keys.TAB + Keys.SPACE)
-    print('\n Please solve the "reCaptcha" and click "Login" on the blinkist website.\n Once you have successfully logged in, press any key in this terminal.\n')
+
+    if blink_usr != '' and blink_pwd != '':
+        
+        time.sleep(random.uniform(0, 1.5))
+        driver.find_element_by_id('login-form_login_email').send_keys(blink_usr)
+        time.sleep(random.uniform(0, 0.5))
+        driver.find_element_by_id('login-form_login_password').send_keys(blink_pwd)
+        time.sleep(random.uniform(0, 0.5))
+        driver.find_element_by_id('login-form_login_password').send_keys(Keys.TAB + Keys.TAB + \
+            Keys.TAB + Keys.TAB + Keys.TAB + Keys.TAB + Keys.SPACE)
+        print('\nPlease solve the "reCaptcha" and click "Login" on the blinkist website.\nOnce you have successfully logged in, press any key in this terminal.\n')
+
+    else:
+
+        print('You haven\'t specified your Blinkist login information. Please manually log in once the login screen is in focus.\nOnce you have successfully logged in, press any key in this terminal.\n')
+    
     msvcrt.getch()
 
 def usr_selection_books():

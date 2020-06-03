@@ -1,0 +1,23 @@
+# Looks something like that
+
+25/05/2020 19:31:49 New Scrape Session Started.
+25/05/2020 19:31:49 243 of 2014 urls have been skipped because the respective documents already exist in the provided directory.
+25/05/2020 19:31:49 Pass #: 1.
+25/05/2020 19:38:22 local variable 'book_info' referenced before assignment after 52 iterations.
+25/05/2020 19:40:22 Session continued after break.
+25/05/2020 19:40:22 Pass #: 2.
+25/05/2020 19:43:54 Message: Unable to locate element: .book__header__title
+ after 78 iterations.
+25/05/2020 19:45:54 Session continued after break.
+25/05/2020 19:45:54 Pass #: 3.
+25/05/2020 19:49:18 Message: Unable to locate element: .book__header__title
+ after 104 iterations.
+
+-----------------------------------------
+
+
+
+28/05/2020 21:53:04 New Scrape Session Started.
+28/05/2020 21:53:04 0 urls have been skipped because the respective documents already exist in the provided directory.
+ Remaining urls: 0.
+28/05/2020 21:53:04 Pass #: 1.
