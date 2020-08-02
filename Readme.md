@@ -22,7 +22,7 @@ Not sure if this works here, but usually you can install all packages with:
 conda install --file requirements.txt
 ```
 
-main_blink.py imports modules from the other scripts as needed. Run main_blink.py with command line arguments for blinkist.com username and password (of course you can login manually as well, in which case no aditional arguemnts). 
+main_blink.py imports modules from the other scripts as needed. Run main_blink.py with command line arguments for blinkist.com username and password (of course you can login manually as well, in which case no aditional arguments). 
 Please note, you still have to manually solve the reCaptcha. This is something I haven't been able to solve by now.
 
 ```
